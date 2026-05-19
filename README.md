@@ -1,93 +1,93 @@
 # Hover Vertical Tabs
 
-Chrome の垂直タブパネルを **マウスオーバーだけで展開**できる Chrome 拡張機能です。  
-Collapse 状態でも左端にマウスを近づけるだけでタブ一覧を確認・操作できます。
+A Chrome extension that **expands the vertical tab panel on hover** — no click required.  
+Just move your mouse to the left edge to instantly preview and switch between tabs, even when the panel is collapsed.
 
 ---
 
-## スクリーンショット
+## Screenshots
 
-### 通常時（Collapse 状態）
-左端に半透明のハンドルが表示されます。ページの表示を極力妨げないよう、普段は限りなく透明に保たれています。
+### Default state (collapsed)
+A semi-transparent handle sits quietly on the left edge, keeping the page unobstructed.
 
-![通常時](docs/screenshot_collapsed.png)
+![Collapsed](docs/screenshot_collapsed.png)
 
-### ホバー時（パネル展開）
-ハンドルにマウスを乗せると、タブ一覧パネルがスライドインします。
+### On hover (panel expanded)
+Moving the mouse over the handle smoothly slides in the full tab list.
 
-![ホバー時](docs/screenshot_expanded.png)
-
----
-
-## 機能
-
-| 操作 | 動作 |
-|------|------|
-| 左端にホバー | タブ一覧パネルが展開 |
-| タブをクリック | そのタブへ切り替え |
-| × をクリック | タブを閉じる |
-| パネル外へマウスを移動 | パネルが自動で閉じる |
-
-- ダーク / ライトテーマ自動対応
-- ブラウザの表示言語に合わせた UI（日本語 / 英語）
+![Expanded](docs/screenshot_expanded.png)
 
 ---
 
-## 動作環境
+## Features
 
-- Google Chrome 114 以降
+| Action | Result |
+|--------|--------|
+| Hover over the left edge | Tab panel expands |
+| Click a tab | Switch to that tab |
+| Click × | Close the tab |
+| Move mouse away | Panel closes automatically |
+
+- Automatic dark / light theme support
+- Localized UI — English and Japanese based on browser language
 
 ---
 
-## インストール
+## Requirements
 
-Chrome Web Store への公開前は、デベロッパーモードで直接読み込む方法でインストールできます。
+- Google Chrome 114 or later
 
-1. このリポジトリをクローン（または ZIP でダウンロード・解凍）
+---
+
+## Installation
+
+Until a Chrome Web Store release is available, load the extension manually in developer mode.
+
+1. Clone the repository (or download and unzip)
 
    ```bash
    git clone https://github.com/<your-username>/hover-tab-panel.git
    ```
 
-2. Chrome で `chrome://extensions/` を開く
+2. Open `chrome://extensions/` in Chrome
 
-3. 右上の **デベロッパーモード** をオンにする
+3. Enable **Developer mode** (toggle in the top-right corner)
 
-4. **パッケージ化されていない拡張機能を読み込む** をクリックし、クローンしたフォルダを選択
+4. Click **Load unpacked** and select the cloned folder
 
 ---
 
-## 使い方
+## Usage
 
-1. Chrome の垂直タブを有効にし、パネルを Collapse する（省略可）
-2. 任意のページを開く
-3. ページ**左端**（画面の端ではなく、コンテンツ領域の左端）にマウスを乗せる
-4. タブ一覧パネルが展開されるので、目的のタブをクリック
-5. パネル外にマウスを移動すると自動で閉じる
+1. Optionally enable Chrome's built-in vertical tabs and collapse the panel
+2. Open any webpage
+3. Move your mouse to the **left edge of the content area**
+4. Click the tab you want to switch to
+5. Move the mouse away to close the panel
 
 > **Note**  
-> 本拡張機能は Chrome のネイティブ垂直タブパネル自体を操作するのではなく、ページのコンテンツ領域にオーバーレイとして描画されます。Chrome の垂直タブと併用することも、本拡張機能単体で使うことも可能です。
+> This extension cannot directly control Chrome's native vertical tab panel (browser UI is off-limits to extensions). Instead, it renders an overlay inside the page content area. It works alongside Chrome's vertical tabs or as a standalone tab switcher.
 
 ---
 
-## ファイル構成
+## File structure
 
 ```
 hover-tab-panel/
-├── manifest.json        # 拡張機能の設定（Manifest V3）
-├── background.js        # タブの取得・切り替え・閉じる処理
-├── content.js           # ホバーパネルの DOM 生成とイベント管理
-├── content.css          # パネルのスタイル（ダーク・ライト対応）
+├── manifest.json        # Extension config (Manifest V3)
+├── background.js        # Tab query, switch, and close handlers
+├── content.js           # Hover panel DOM and event logic
+├── content.css          # Panel styles (dark & light theme)
 ├── icon16.png
 ├── icon48.png
 ├── icon128.png
 └── _locales/
     ├── en/messages.json # English strings
-    └── ja/messages.json # 日本語文字列
+    └── ja/messages.json # Japanese strings
 ```
 
 ---
 
-## ライセンス
+## License
 
 [MIT](LICENSE)
