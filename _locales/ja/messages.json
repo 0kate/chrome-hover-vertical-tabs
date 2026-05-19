@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Hover Vertical Tabs"
+  },
+  "extDescription": {
+    "message": "ページ左端にマウスを近づけるとタブ一覧が展開します"
+  },
+  "panelHeader": {
+    "message": "タブ一覧"
+  },
+  "closeTabLabel": {
+    "message": "タブを閉じる"
+  },
+  "untitledTab": {
+    "message": "(無題)"
+  }
+}

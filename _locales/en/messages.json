@@ -1,0 +1,17 @@
+{
+  "extName": {
+    "message": "Hover Vertical Tabs"
+  },
+  "extDescription": {
+    "message": "Hover over the left edge to expand the tab panel"
+  },
+  "panelHeader": {
+    "message": "Tabs"
+  },
+  "closeTabLabel": {
+    "message": "Close tab"
+  },
+  "untitledTab": {
+    "message": "(Untitled)"
+  }
+}
