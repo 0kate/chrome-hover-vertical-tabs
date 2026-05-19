@@ -12,9 +12,21 @@
   transition: background 0.15s, border-color 0.15s !important;
 }
 
+/* Center handle type — floats in the middle third of the screen */
+#hvt-trigger.hvt-center {
+  top: 50% !important;
+  height: 120px !important;
+  transform: translateY(-50%) !important;
+  border-radius: 0 10px 10px 0 !important;
+}
+
 #hvt-trigger:hover {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.22) 0%, transparent 100%) !important;
   border-right-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+#hvt-trigger.hvt-center {
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Floating handle badge */
@@ -173,6 +185,12 @@
   #hvt-trigger {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.025) 0%, transparent 100%) !important;
     border-right-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  #hvt-trigger.hvt-center {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.04) 0%, transparent 100%) !important;
+    border-right-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.06) !important;
   }
 
   #hvt-trigger:hover {

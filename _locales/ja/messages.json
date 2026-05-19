@@ -13,5 +13,26 @@
   },
   "untitledTab": {
     "message": "(無題)"
+  },
+  "popupTitle": {
+    "message": "Hover Vertical Tabs"
+  },
+  "disableOnSite": {
+    "message": "このサイトで無効にする"
+  },
+  "enableOnSite": {
+    "message": "このサイトで有効にする"
+  },
+  "popupSpecialPage": {
+    "message": "このページでは拡張機能を操作できません。"
+  },
+  "handleTypeLabel": {
+    "message": "ハンドルタイプ"
+  },
+  "handleTypeFull": {
+    "message": "全体"
+  },
+  "handleTypeCenter": {
+    "message": "中央"
   }
 }

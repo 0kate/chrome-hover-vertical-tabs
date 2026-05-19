@@ -1,4 +1,7 @@
-(function () {
+(async function () {
+  const { disabledSites = [], handleType = 'full' } = await chrome.storage.sync.get(['disabledSites', 'handleType']);
+  if (disabledSites.includes(location.hostname)) return;
+
   if (document.getElementById('hvt-panel')) return;
 
   const FALLBACK_ICON =
@@ -14,7 +17,6 @@
 
   const handle = document.createElement('div');
   handle.id = 'hvt-handle';
-  // Tab stack icon (SVG)
   handle.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="1" y="3" width="12" height="2.2" rx="1.1" fill="currentColor"/>
     <rect x="1" y="6.9" width="12" height="2.2" rx="1.1" fill="currentColor"/>
@@ -34,6 +36,8 @@
 
   panel.appendChild(header);
   panel.appendChild(list);
+  if (handleType === 'center') trigger.classList.add('hvt-center');
+
   document.documentElement.appendChild(trigger);
   document.documentElement.appendChild(panel);
 
@@ -113,4 +117,16 @@
 
   panel.addEventListener('mouseenter', () => clearTimeout(collapseTimer));
   panel.addEventListener('mouseleave', scheduleHide);
+
+  // --- Disable message from popup ---
+
+  chrome.runtime.onMessage.addListener((request) => {
+    if (request.action === 'hvtDisable') {
+      trigger.remove();
+      panel.remove();
+    }
+    if (request.action === 'hvtSetHandleType') {
+      trigger.classList.toggle('hvt-center', request.handleType === 'center');
+    }
+  });
 })();

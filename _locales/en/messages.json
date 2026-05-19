@@ -13,5 +13,26 @@
   },
   "untitledTab": {
     "message": "(Untitled)"
+  },
+  "popupTitle": {
+    "message": "Hover Vertical Tabs"
+  },
+  "disableOnSite": {
+    "message": "Disable on this site"
+  },
+  "enableOnSite": {
+    "message": "Enable on this site"
+  },
+  "popupSpecialPage": {
+    "message": "This extension cannot be controlled on this page."
+  },
+  "handleTypeLabel": {
+    "message": "Handle type"
+  },
+  "handleTypeFull": {
+    "message": "Full"
+  },
+  "handleTypeCenter": {
+    "message": "Center"
   }
 }

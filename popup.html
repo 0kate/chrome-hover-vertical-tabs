@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 230px;
+      padding: 14px;
+      font-family: 'Google Sans', 'Segoe UI', Arial, sans-serif;
+      font-size: 13px;
+      background: #fff;
+      color: #202124;
+    }
+
+    .title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    .host {
+      font-size: 13px;
+      color: #202124;
+      margin-bottom: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background: #f1f3f4;
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 9px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+
+    button.btn-disable {
+      background: #f1f3f4;
+      color: #202124;
+    }
+    button.btn-disable:hover { background: #e2e4e6; }
+
+    button.btn-enable {
+      background: #1a73e8;
+      color: #fff;
+    }
+    button.btn-enable:hover { background: #1666d3; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 12px 0;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #5f6368;
+      margin-bottom: 8px;
+    }
+
+    .segmented {
+      display: flex;
+      gap: 6px;
+    }
+
+    .seg-btn {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1.5px solid #dadce0;
+      border-radius: 8px;
+      background: #fff;
+      color: #202124;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: inherit;
+      font-weight: 500;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .seg-btn:hover { background: #f1f3f4; }
+    .seg-btn.seg-active {
+      background: #e8f0fe;
+      border-color: #1a73e8;
+      color: #1a73e8;
+    }
+
+    #special-page {
+      color: #5f6368;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #292a2d; color: #e8eaed; }
+      .title { color: #9aa0a6; }
+      .host { background: #3c4043; color: #e8eaed; }
+      button.btn-disable { background: #3c4043; color: #e8eaed; }
+      button.btn-disable:hover { background: #4a4d51; }
+      #special-page { color: #9aa0a6; }
+      .divider { border-top-color: #3c4043; }
+      .section-label { color: #9aa0a6; }
+      .seg-btn { background: #3c4043; border-color: #5f6368; color: #e8eaed; }
+      .seg-btn:hover { background: #4a4d51; }
+      .seg-btn.seg-active { background: #1a3a5c; border-color: #8ab4f8; color: #8ab4f8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="title" id="title"></div>
+  <div id="main">
+    <div class="host" id="host"></div>
+    <button id="toggleBtn"></button>
+    <hr class="divider">
+    <div class="section-label" id="handleTypeLabel"></div>
+    <div class="segmented">
+      <button class="seg-btn" id="btnFull"></button>
+      <button class="seg-btn" id="btnCenter"></button>
+    </div>
+  </div>
+  <div id="special-page" style="display:none"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
